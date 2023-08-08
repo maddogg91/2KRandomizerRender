@@ -1,9 +1,17 @@
 {
-	"scripts": {
-		"start": "npx nodemon main.js"
-	},
-	"dependencies": {
-		"alert": "^5.1.4",
+  "name": "2k23 Player Randomizer",
+  "version": "1.0.0",
+  "description": "Creates random stats for a 2K Create A Player",
+  "main": "app.js",
+  "repository": "https://github.com/maddogg91/2KRandomizerRender",
+  "author": "Maddogg Software Development Ltd. Co.",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+   "alert": "^5.1.4",
 		"body-parser": "^1.20.2",
 		"browserify": "^17.0.0",
 		"chrome-launcher": "^0.15.2",
@@ -20,5 +28,7 @@
 		"nodemon": "^2.0.22",
 		"path": "^0.12.7",
 		"sqlite3": "^5.1.6"
-	}
-}
+  },
+  "engines": {
+    "node": ">=14"
+  }
