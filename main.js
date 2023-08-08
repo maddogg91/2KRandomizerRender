@@ -1,6 +1,6 @@
-const express = require("express");
-const app = express();
 var http = require('http');
+const express = require('express');
+const app = express();
 const fs= require('fs');
 const path= require('path');
 const mongo= require('./mongoinfo.js');
@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 var helmet = require('helmet');
 var rateLimit = require("express-rate-limit");
 var _alert = require('alert'); 
+
+
 app.set('view engine', 'ejs');
 app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'templates'));
@@ -40,15 +42,9 @@ app.use(
 app.use(limiter);
 app.use(cookieParser());
 
-const port = process.env.PORT || 3001;
-
-app.get("/", (req, res) => res.type('html').send(html));
-
-const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
-
-server.keepAliveTimeout = 120 * 1000;
-server.headersTimeout = 120 * 1000;
-
+const server = app.listen(7700, () => {
+  console.log(`Express running → PORT ${server.address().port}`);
+});
 
 
 var session;
